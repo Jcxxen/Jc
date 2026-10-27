@@ -3,35 +3,87 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>จกจิ้ง – ร้านแอพพรีเมียม</title>
+<title>จกจิ้ง – ร้านแอพพรี</title>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #f8f9fa; --cd: #ffffff; --tx: #1c1917; --mu: #78716c; --bd: #e7e5e4;
-  --or: #ff7a00; --ol: #fff7ed; --or-hover: #e66e00;
+  --bg: #f8f9fa;
+  --cd: #ffffff;
+  --tx: #1c1917;
+  --mu: #78716c;
+  --bd: #e7e5e4;
+  --or: #ff7a00;
+  --ol: #fff7ed;
+  --or-hover: #e66e00;
   --shadow: 0 4px 20px -2px rgba(255,122,0,0.08);
-  box-sizing: border-box; color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light;
 }
+
 [data-theme="dark"] {
-  --bg: #0c0a09; --cd: #1c1917; --tx: #f5f5f4; --mu: #a8a29e; --bd: #292524;
-  --ol: #2a1704; --or: #ff8c1a; --or-hover: #ff7a00;
-  --shadow: 0 4px 20px -2px rgba(0,0,0,0.5); color-scheme: dark;
+  --bg: #0c0a09;
+  --cd: #1c1917;
+  --tx: #f5f5f4;
+  --mu: #a8a29e;
+  --bd: #292524;
+  --ol: #2a1704;
+  --or: #ff8c1a;
+  --or-hover: #ff7a00;
+  --shadow: 0 4px 20px -2px rgba(0,0,0,0.5);
+  color-scheme: dark;
 }
+
 [data-theme="warm"] {
-  --bg: #fffbf7; --cd: #ffffff; --tx: #292524; --mu: #8c7a6b; --bd: #f3e8de;
-  --ol: #ffedd5; --or: #f97316; --or-hover: #ea580c;
-  --shadow: 0 4px 20px -2px rgba(249,115,22,0.1); color-scheme: light;
+  --bg: #fffbf7;
+  --cd: #ffffff;
+  --tx: #292524;
+  --mu: #8c7a6b;
+  --bd: #f3e8de;
+  --ol: #ffedd5;
+  --or: #f97316;
+  --or-hover: #ea580c;
+  --shadow: 0 4px 20px -2px rgba(249,115,22,0.1);
+  color-scheme: light;
 }
+
 * { box-sizing: border-box; transition: background-color 0.2s, border-color 0.2s, color 0.2s; }
-body { margin: 0 auto; max-width: 520px; padding: 0 14px 90px; background: var(--bg); color: var(--tx); font-family: 'Prompt', -apple-system, sans-serif; font-size: 15px; line-height: 1.5; }
-header { position: sticky; top: 10px; z-index: 11; margin: 10px 0 16px; background: var(--cd); border: 1.5px solid var(--bd); border-radius: 22px; padding: 8px 14px; display: flex; align-items: center; gap: 10px; box-shadow: var(--shadow); }
+body {
+  margin: 0 auto;
+  max-width: 520px;
+  padding: 0 14px 90px;
+  background: var(--bg);
+  color: var(--tx);
+  font-family: 'Prompt', -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+header {
+  position: sticky;
+  top: env(safe-area-inset-top, 10px);
+  z-index: 11;
+  margin: 10px 0 16px;
+  background: var(--cd);
+  border: 1.5px solid var(--bd);
+  border-radius: 22px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow);
+}
 header b { flex: 1; color: var(--or); font-size: 19px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+header img.logo-img { height: 28px; width: auto; border-radius: 6px; object-fit: contain; }
+
 button { font: inherit; cursor: pointer; border: 0; outline: none; }
 .ib { background: none; border: 0; font-size: 22px; color: var(--tx); position: relative; padding: 4px 6px; border-radius: 10px; display: grid; place-items: center; }
 .ib:active { background: var(--ol); }
 .av { width: 38px; height: 38px; border-radius: 50%; background: var(--ol); color: var(--or); font-weight: 700; border: 2px solid var(--or); font-size: 16px; display: grid; place-items: center; }
 .av.l { width: 84px; height: 84px; font-size: 34px; margin: auto; }
 i.bd { position: absolute; top: -2px; right: -2px; background: var(--or); color: #fff; font-size: 11px; border-radius: 10px; padding: 0 6px; font-style: normal; font-weight: 600; }
+
 .cd { background: var(--cd); border: 1.5px solid var(--bd); border-radius: 20px; padding: 14px; margin: 12px 0; box-shadow: var(--shadow); }
 .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .g2 > .cd { margin: 0; }
@@ -42,37 +94,72 @@ i.bd { position: absolute; top: -2px; right: -2px; background: var(--or); color:
 .big { font-size: 24px; font-weight: 700; color: var(--or); }
 h2 { color: var(--or); font-size: 18px; font-weight: 700; margin: 20px 0 10px; display: flex; align-items: center; justify-content: space-between; }
 h3 { margin: 8px 0; font-size: 16px; font-weight: 600; }
-.btn { width: 100%; border: 1.5px solid var(--or); background: var(--ol); color: var(--or); border-radius: 14px; padding: 10px 14px; font-weight: 600; text-align: center; text-decoration: none; display: inline-block; margin: 6px 0; cursor: pointer; }
+
+.btn {
+  width: 100%;
+  border: 1.5px solid var(--or);
+  background: var(--ol);
+  color: var(--or);
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 6px 0;
+  cursor: pointer;
+}
 .btn.p { background: var(--or); color: #ffffff; }
 .btn.p:hover { background: var(--or-hover); }
 .btn.danger { border-color: #ef4444; color: #ef4444; background: transparent; }
 .btn.danger.p { background: #ef4444; color: #fff; }
 .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
 .chip { border: 1.5px solid var(--bd); border-radius: 20px; padding: 6px 14px; background: var(--cd); color: var(--tx); font-weight: 500; }
 .chip.sel { border-color: var(--or); background: var(--ol); color: var(--or); font-weight: 600; }
+
 .ic { width: 100%; aspect-ratio: 1; border-radius: 20px; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 42px; background: var(--or); }
 .ic.s { width: 44px; height: 44px; font-size: 18px; flex: none; border-radius: 12px; }
+
 .sc { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
 .sc::-webkit-scrollbar { display: none; }
 .sc > .cd { min-width: 160px; margin: 0; flex: 0 0 auto; }
+
 .pc { position: relative; }
 .hot { position: absolute; top: 12px; right: 12px; background: #ef4444; color: #fff; font-size: 10px; font-weight: 700; border-radius: 8px; padding: 2px 8px; z-index: 1; }
-input, select, textarea { width: 100%; padding: 12px; border: 1.5px solid var(--bd); border-radius: 14px; background: var(--cd); color: var(--tx); font: inherit; margin: 6px 0; outline: none; }
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--bd);
+  border-radius: 14px;
+  background: var(--cd);
+  color: var(--tx);
+  font: inherit;
+  margin: 6px 0;
+  outline: none;
+}
 input:focus, select:focus, textarea:focus { border-color: var(--or); }
+
 .ov { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(3px); z-index: 20; display: flex; align-items: center; justify-content: center; padding: 16px; }
 .md { background: var(--cd); border-radius: 26px; padding: 20px; width: 100%; max-width: 440px; max-height: 85vh; overflow-y: auto; border: 1.5px solid var(--bd); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
 .tab { flex: 1; border: 0; border-radius: 14px; padding: 10px; background: none; color: var(--tx); font-weight: 600; }
 .tab.on { background: var(--ol); color: var(--or); }
 .mi { padding: 14px 8px; border-bottom: 1px solid var(--bd); display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: 500; }
 .mi:last-child { border-bottom: 0; }
+
 .stps { display: flex; margin: 12px 0 18px; }
 .stp { flex: 1; text-align: center; font-size: 11px; color: var(--mu); font-weight: 500; }
 .stp i { display: grid; place-items: center; width: 32px; height: 32px; margin: 0 auto 4px; border-radius: 50%; background: var(--ol); font-style: normal; color: var(--or); font-weight: 700; border: 1px solid var(--bd); }
 .stp i.on { background: var(--or); color: #fff; border-color: var(--or); }
 .stp i.dn { background: #22c55e; color: #fff; border-color: #22c55e; }
-.cb { position: fixed; left: 0; right: 0; margin: 0 auto; width: calc(100% - 28px); max-width: 492px; bottom: 14px; z-index: 9; box-shadow: 0 8px 24px rgba(255,122,0,0.3); }
+
+.cb { position: fixed; left: 0; right: 0; margin: 0 auto; width: calc(100% - 28px); max-width: 492px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); z-index: 9; box-shadow: 0 8px 24px rgba(255,122,0,0.3); }
 #ts { position: fixed; left: 50%; transform: translateX(-50%); bottom: 90px; background: #1c1917; color: #fff; border-radius: 20px; padding: 10px 20px; opacity: 0; transition: opacity 0.25s, transform 0.25s; pointer-events: none; z-index: 30; font-size: 14px; text-align: center; border: 1px solid var(--or); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-.key-box { background: var(--bg); border: 1px dashed var(--or); padding: 8px 12px; border-radius: 12px; font-family: monospace; font-size: 13px; word-break: break-all; margin: 4px 0; }
+
+.badge-tag { display: inline-block; padding: 2px 8px; border-radius: 8px; font-size: 11px; font-weight: 600; background: var(--ol); color: var(--or); margin-top: 4px; }
+.key-box { background: var(--bg); border: 1px dashed var(--or); padding: 10px; border-radius: 12px; font-family: monospace; font-size: 13px; word-break: break-all; margin: 6px 0; }
 </style>
 </head>
 <body>
@@ -80,25 +167,38 @@ input:focus, select:focus, textarea:focus { border-color: var(--or); }
 <div id="ts"></div>
 
 <script>
+// --- INITIAL STATE & DATA SEEDING ---
 const defaultCategories = [
   { id: 'nf', n: 'Netflix', c: '#e50914', l: 'N', desc: 'แอพดูหนัง ซีรีส์ยอดฮิต ความคมชัด 4K Ultra HD' },
   { id: 'yt', n: 'YouTube Premium', c: '#ff0000', l: '▶', desc: 'ดูคลิปไม่มีโฆษณา ฟังเพลง Background Play' },
-  { id: 'ds', n: 'Disney+ Hotstar', c: '#113ccf', l: 'D+', desc: 'หนังดังจาก Marvel, Disney, Pixar' },
-  { id: 'sp', n: 'Spotify Premium', c: '#1ed760', l: '♫', desc: 'ฟังเพลงแบบไม่มีโฆษณาคั่น ออฟไลน์' }
+  { id: 'ds', n: 'Disney+ Hotstar', c: '#113ccf', l: 'D+', desc: 'หนังดังจาก Marvel, Disney, Pixar และอื่นๆ' },
+  { id: 'sp', n: 'Spotify Premium', c: '#1ed760', l: '♫', desc: 'ฟังเพลงแบบไม่มีโฆษณาคั่น ดาวน์โหลดฟังออฟไลน์' },
+  { id: 'cv', n: 'Canva Pro', c: '#00c4cc', l: 'C', desc: 'ปลดล็อกพรีเมียมเทมเปลต ฟอนต์ และองค์ประกอบ' }
 ];
 
 const defaultProducts = [
-  { id: 1, n: 'Netflix จอส่วนตัว (ไม่เคลม)', c: 'nf', p: 49, ap: 40, k: 3, s: 128, h: 1, desc: 'จอส่วนตัว ห้ามเปลี่ยนรหัส ไม่รับประกันเคลม' },
-  { id: 2, n: 'YouTube Premium 1 เดือน (ดึงครอบครัว)', c: 'yt', p: 35, ap: 25, k: 5, s: 210, h: 1, desc: 'ดึงเข้า Family Group ใช้งานง่าย' }
+  { id: 1, n: 'Netflix จอส่วนตัว (ไม่เคลม)', c: 'nf', p: 49, ap: 40, k: 3, s: 128, h: 1, desc: 'เมลร้าน จอส่วนตัว ห้ามเปลี่ยนรหัส ไม่รับประกันเคลม' },
+  { id: 2, n: 'Netflix จอส่วนตัว (รับประกัน 30 วัน)', c: 'nf', p: 99, ap: 85, k: 2, s: 64, h: 0, desc: 'มีเคลม มีปัญหาสลับจอให้ทันที ดูได้ยาวๆ 30 วัน' },
+  { id: 3, n: 'YouTube Premium 1 เดือน (ดึงครอบครัว)', c: 'yt', p: 35, ap: 25, k: 5, s: 210, h: 1, desc: 'ส่งเมลลูกค้าเข้า Family Group ดึงไวใน 5 นาที' },
+  { id: 4, n: 'YouTube Premium 3 เดือน (เมลร้าน)', c: 'yt', p: 90, ap: 75, k: 2, s: 70, h: 0, desc: 'เมลของทางร้าน พร้อมใช้งาน 3 เดือนเต็ม' },
+  { id: 5, n: 'Disney+ Hotstar 1 เดือน', c: 'ds', p: 59, ap: 48, k: 4, s: 52, h: 0, desc: 'รับเบอร์ล็อกอิน รหัส OTP 1 เดือน' },
+  { id: 6, n: 'Spotify Premium 1 เดือน (เมลส่วนตัว)', c: 'sp', p: 39, ap: 30, k: 8, s: 95, h: 1, desc: 'ย้ายเข้าครอบครัว ดึงเข้าแอพเดิมฟังเพลงต่อได้เลย' },
+  { id: 7, n: 'Canva Pro 1 เดือน (ทีม)', c: 'cv', p: 29, ap: 20, k: 10, s: 150, h: 0, desc: 'เข้าร่วมทีม Pro ใช้ปลดล็อกฟีเจอร์พรีเมียมได้ครบ' }
 ];
 
 const defaultKeys = {
-  1: ['user1@nf.com:pass1234', 'user2@nf.com:pass5678'],
-  2: ['yt_link_01', 'yt_link_02']
+  1: ['user1@nf.com:pass1234', 'user2@nf.com:pass5678', 'user3@nf.com:pass9999'],
+  2: ['claim_nf1@store.com:pass111', 'claim_nf2@store.com:pass222'],
+  3: ['yt_invite_link_01', 'yt_invite_link_02', 'yt_invite_link_03', 'yt_invite_link_04', 'yt_invite_link_05'],
+  4: ['yt3m_01@store.com:pass888', 'yt3m_02@store.com:pass999'],
+  5: ['ds_otp_0812345678', 'ds_otp_0898765432', 'ds_otp_0877778888', 'ds_otp_0855556666'],
+  6: ['sp_invite_01', 'sp_invite_02', 'sp_invite_03', 'sp_invite_04', 'sp_invite_05', 'sp_invite_06', 'sp_invite_07', 'sp_invite_08'],
+  7: ['canva_join_link_01', 'canva_join_link_02', 'canva_join_link_03', 'canva_join_link_04', 'canva_join_link_05', 'canva_join_link_06', 'canva_join_link_07', 'canva_join_link_08', 'canva_join_link_09', 'canva_join_link_10']
 };
 
 const defaultSettings = {
   storeName: 'จกจิ้ง',
+  logoUrl: '',
   slogan: 'บริการแอพพรีเมียม ราคาย่อมเยา ส่งไว 24 ชม.',
   bannerMsg: '⚠️ เช็คสินค้าก่อนเติมเงิน หากเติมเงินผิด ไม่คืนเงินทุกกรณี',
   promptpayNo: '081-234-5678',
@@ -107,11 +207,15 @@ const defaultSettings = {
   lineUrl: 'https://line.me/R/ti/p/@781wfctk'
 };
 
-function loadStorage(k, fb) {
-  try { const d = localStorage.getItem('JOKJING_' + k); return d ? JSON.parse(d) : fb; } catch(e) { return fb; }
+// --- LOCAL STORAGE MANAGER ---
+function loadStorage(key, fallback) {
+  try {
+    const d = localStorage.getItem('JOKJING_' + key);
+    return d ? JSON.parse(d) : fallback;
+  } catch (e) { return fallback; }
 }
-function saveStorage(k, v) {
-  try { localStorage.setItem('JOKJING_' + k, JSON.stringify(v)); } catch(e) {}
+function saveStorage(key, val) {
+  try { localStorage.setItem('JOKJING_' + key, JSON.stringify(val)); } catch (e) {}
 }
 
 let C = loadStorage('C', defaultCategories);
@@ -121,8 +225,9 @@ let SETTINGS = loadStorage('SETTINGS', defaultSettings);
 let THEME = loadStorage('THEME', 'light');
 
 let S = {
-  v: 'home', a: null,
-  u: loadStorage('USER', { n: 'admin', p: '123456', bal: 500, tot: 1500, ag: 1, role: 'admin' }),
+  v: 'home',
+  a: null, // Selected Category ID
+  u: loadStorage('USER', null),
   users: loadStorage('USERS_LIST', [
     { n: 'admin', p: '123456', bal: 500, tot: 1500, ag: 1, role: 'admin' },
     { n: 'demo', p: '123456', bal: 150, tot: 300, ag: 0, role: 'user' }
@@ -130,246 +235,951 @@ let S = {
   cart: loadStorage('CART', []),
   ord: loadStorage('ORD', []),
   top: loadStorage('TOPUP', []),
-  n: 1, q: '', st: 1, tp: {}, m: null, menu: 0, adminTab: 'topups'
+  n: 1,
+  q: '',
+  st: 1,
+  tp: {},
+  m: null,
+  menu: 0,
+  rs: 5,
+  rt: '',
+  rv: loadStorage('REVIEWS', [
+    { n: 'Su***', s: 5, t: 'ได้ของไว ใช้ได้จริงครับ' },
+    { n: 'Mi***', s: 5, t: 'ตอบเร็ว บริการดีมาก อุดหนุนประจำ' }
+  ]),
+  adminTab: 'products'
 };
 
+// Set Theme on Load
 document.documentElement.setAttribute('data-theme', THEME);
 
+// --- HELPER FUNCTIONS ---
 const $ = s => document.querySelector(s);
-const cat = id => C.find(x => x.id == id) || { n: 'ทั่วไป', c: '#ff7a00', l: '?' };
+const cat = id => C.find(x => x.id == id) || { n: 'ไม่ระบุ', c: '#ff7a00', l: '?' };
 const pd = id => P.find(x => x.id == id);
 const pr = p => (S.u && S.u.ag ? p.ap : p.p);
 const tt = it => it.reduce((a, x) => a + (pd(x.id) ? pr(pd(x.id)) * x.q : 0), 0);
-const ic = (cId, s) => `<div class="ic ${s ? 's' : ''}" style="background:${cat(cId).c}">${cat(cId).l}</div>`;
+const ic = (cId, s) => {
+  const item = cat(cId);
+  return `<div class="ic ${s ? 's' : ''}" style="background:${item.c}">${item.l}</div>`;
+};
 
-function T(msg) {
-  const t = $('#ts'); if(!t) return;
-  t.textContent = msg; t.style.opacity = 1; t.style.transform = 'translateX(-50%) translateY(-5px)';
+const T = m => {
+  const t = $('#ts');
+  t.textContent = m;
+  t.style.opacity = 1;
+  t.style.transform = 'translateX(-50%) translateY(-5px)';
   clearTimeout(T.i);
-  T.i = setTimeout(() => { t.style.opacity = 0; t.style.transform = 'translateX(-50%) translateY(0)'; }, 2400);
+  T.i = setTimeout(() => {
+    t.style.opacity = 0;
+    t.style.transform = 'translateX(-50%) translateY(0)';
+  }, 2400);
+};
+
+function setTheme(t) {
+  THEME = t;
+  document.documentElement.setAttribute('data-theme', t);
+  saveStorage('THEME', t);
+  R();
 }
 
 function saveState() {
-  saveStorage('C', C); saveStorage('P', P); saveStorage('K', K);
-  saveStorage('SETTINGS', SETTINGS); saveStorage('USER', S.u);
-  saveStorage('USERS_LIST', S.users); saveStorage('CART', S.cart);
-  saveStorage('ORD', S.ord); saveStorage('TOPUP', S.top);
+  saveStorage('C', C);
+  saveStorage('P', P);
+  saveStorage('K', K);
+  saveStorage('SETTINGS', SETTINGS);
+  saveStorage('USER', S.u);
+  saveStorage('USERS_LIST', S.users);
+  saveStorage('CART', S.cart);
+  saveStorage('ORD', S.ord);
+  saveStorage('TOPUP', S.top);
+  saveStorage('REVIEWS', S.rv);
 }
+
+const login = () => { S.menu = 0; S.m = { t: 'auth', tab: 0 }; R(); };
+const need = () => S.u || (S.m = { t: 'auth', tab: 0 }, R(), 0);
 
 function go(v, a) {
-  S.v = v; S.a = a; S.menu = 0; S.m = null; S.n = 1;
-  window.scrollTo(0, 0); R();
-}
-
-function approveTopup(id) {
-  const t = S.top.find(x => x.id === id);
-  if (!t) return;
-  t.s = 'อนุมัติแล้ว';
-  
-  const targetUser = S.users.find(x => x.n === t.u);
-  if (targetUser) {
-    targetUser.bal = (targetUser.bal || 0) + Number(t.amt);
-    targetUser.tot = (targetUser.tot || 0) + Number(t.amt);
+  if (['topup', 'profile', 'cart', 'hist'].includes(v) && !S.u) {
+    S.menu = 0;
+    return login();
   }
-  if (S.u && S.u.n === t.u) {
-    S.u.bal = (S.u.bal || 0) + Number(t.amt);
-    S.u.tot = (S.u.tot || 0) + Number(t.amt);
-  }
-  saveState();
-  T('อนุมัติยอด ' + t.amt + '฿ สำเร็จ!');
+  S.v = v;
+  S.a = a;
+  S.menu = 0;
+  S.m = null;
+  S.n = 1;
+  if (v == 'shop') S.q = '';
+  if (v == 'topup') { S.st = 1; S.tp = {}; }
+  window.scrollTo(0, 0);
   R();
 }
 
-function rejectTopup(id) {
-  const t = S.top.find(x => x.id === id);
-  if (!t) return;
-  t.s = 'ปฏิเสธ';
-  saveState();
-  T('ปฏิเสธรายการแล้ว');
-  R();
+const ask = it => { if (need()) { S.m = { t: 'cf', it }; R(); } };
+
+const add = id => {
+  if (need()) {
+    const c = S.cart.find(x => x.id == id);
+    c ? c.q += S.n : S.cart.push({ id, q: S.n });
+    saveState();
+    T('เพิ่มลงรถเข็นแล้ว');
+    R();
+  }
+};
+
+function copyTxt(text) {
+  navigator.clipboard.writeText(text).then(() => T('คัดลอกข้อมูลแล้ว 📋'));
 }
 
 function pay() {
   const it = S.m.it, t = tt(it);
-  if (S.u.bal < t) { S.m = null; T('ยอดเงินไม่พอ เติมเงินก่อนนะครับ'); return go('topup'); }
+  if (it.some(x => x.q > (pd(x.id) ? pd(x.id).k : 0))) return T('สินค้าในสต็อกไม่พอ');
+  if (S.u.bal < t) {
+    S.m = null;
+    T('ยอดเงินไม่พอ กรุณาเติมเงินก่อน');
+    return go('topup');
+  }
   
   S.u.bal -= t;
-  let delivered = [];
+  let deliveredKeys = [];
 
   it.forEach(x => {
-    const p = pd(x.id); p.k -= x.q; p.s += x.q;
-    let keys = (K[p.id] && K[p.id].length >= x.q) ? K[p.id].splice(0, x.q) : ['รหัสสินค้าทดสอบ: demo-pass-1234'];
-    S.ord.unshift({ id: Date.now(), n: p.n, q: x.q, p: pr(p) * x.q, keys: keys, t: new Date().toLocaleString('th-TH') });
-    delivered.push({ name: p.n, keys: keys });
+    const p = pd(x.id);
+    p.k -= x.q;
+    p.s += x.q;
+    
+    // Deliver Keys
+    let keysForThis = [];
+    if (K[p.id] && K[p.id].length >= x.q) {
+      keysForThis = K[p.id].splice(0, x.q);
+    } else {
+      for (let i = 0; i < x.q; i++) keysForThis.push('ตัวอย่างข้อมูลสินค้า/ติดต่อแอดมิน');
+    }
+
+    const orderRecord = {
+      id: Date.now() + Math.random().toString(36).substr(2, 4),
+      n: p.n,
+      q: x.q,
+      p: pr(p) * x.q,
+      keys: keysForThis,
+      t: new Date().toLocaleString('th-TH')
+    };
+    
+    S.ord.unshift(orderRecord);
+    deliveredKeys.push({ name: p.n, keys: keysForThis });
   });
 
-  const uIdx = S.users.findIndex(x => x.n === S.u.n);
-  if (uIdx !== -1) S.users[uIdx].bal = S.u.bal;
+  // Update user in users list
+  const uIndex = S.users.findIndex(x => x.n === S.u.n);
+  if (uIndex !== -1) S.users[uIndex].bal = S.u.bal;
 
   S.cart = S.cart.filter(c => !it.includes(c));
-  S.m = { t: 'ok', tot: t, items: delivered };
-  saveState(); R();
+  S.m = { t: 'ok', tot: t, items: deliveredKeys };
+  saveState();
+  R();
 }
+
+function doAuth() {
+  const un = $('#un').value.trim(), pw = $('#pw').value;
+  if (un.length < 3 || pw.length < 6) return T('ชื่อผู้ใช้อย่างน้อย 3 ตัว รหัสผ่านอย่างน้อย 6 ตัว');
+  
+  if (S.m.tab === 1) { // Register
+    if (pw != $('#pw2').value) return T('รหัสผ่านไม่ตรงกัน');
+    if (S.users.find(x => x.n === un)) return T('ชื่อผู้ใช้นี้มีในระบบแล้ว');
+    
+    const newUser = { n: un, p: pw, bal: 0, tot: 0, ag: 0, role: un === 'admin' ? 'admin' : 'user' };
+    S.users.push(newUser);
+    S.u = newUser;
+    S.m = null;
+    saveState();
+    T('สมัครสมาชิกสำเร็จ ยินดีต้อนรับ ' + un);
+  } else { // Login
+    const user = S.users.find(x => x.n === un && x.p === pw);
+    if (!user) return T('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+    S.u = user;
+    S.m = null;
+    saveState();
+    T('ยินดีต้อนรับ ' + un);
+  }
+  R();
+}
+
+// Card Renderer for Category / Product
+const catCard = c => {
+  const prods = P.filter(p => p.c == c.id);
+  const prices = prods.map(pr);
+  const minP = prices.length ? Math.min(...prices) : 0;
+  const maxP = prices.length ? Math.max(...prices) : 0;
+  
+  return `
+    <div class="cd row" onclick="go('category','${c.id}')" style="cursor:pointer">
+      ${ic(c.id, 1)}
+      <div style="flex:1">
+        <b class=or style="font-size:16px">${c.n}</b>
+        <div class=mu>${c.desc || prods.length + ' รายการ'}</div>
+      </div>
+      <div style="text-align:right">
+        <b class=or>${minP > 0 ? (minP === maxP ? minP + '฿' : minP + '–' + maxP + '฿') : 'ดูสินค้า'}</b>
+        <div class=mu style="font-size:11px">คลิกเพื่อดู</div>
+      </div>
+    </div>`;
+};
 
 const card = p => `
   <div class="cd pc" style="padding:10px;opacity:${p.k ? 1 : 0.6}">
     ${p.h ? '<span class=hot>HOT</span>' : ''}
     <div onclick="go('prod',${p.id})" style="cursor:pointer">
       ${ic(p.c)}
-      <div style="margin:8px 0 4px;font-size:14px;font-weight:600;min-height:38px">${p.n}</div>
-      <div class="row sp"><b class=or style="font-size:18px">${pr(p)}฿</b></div>
+      <div style="margin:8px 0 4px;font-size:14px;font-weight:600;min-height:40px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${p.n}</div>
+      <div class="row sp">
+        <b class=or style="font-size:18px">${pr(p)}฿</b>
+        ${S.u && S.u.ag ? '<span class="badge-tag">ราคาตัวแทน</span>' : ''}
+      </div>
     </div>
-    <button class="btn ${p.k ? 'p' : ''}" ${p.k ? '' : 'disabled'} onclick="S.m={t:'cf',it:[{id:${p.id},q:1}]};R()" style="margin-top:8px">
-      ${p.k ? 'สั่งซื้อเลย 🛒' : 'หมด'}
+    <button class="btn ${p.k ? 'p' : ''}" ${p.k ? '' : 'disabled'} onclick="ask([{id:${p.id},q:1}])" style="margin-top:8px">
+      ${p.k ? 'สั่งซื้อ 🛒' : 'สินค้าหมด'}
     </button>
+    <div class=mu style="text-align:center;font-size:12px;margin-top:2px">คงเหลือ ${p.k} ชิ้น</div>
   </div>`;
 
+const grid = () => P.filter(p => (!S.a || p.c == S.a) && p.n.toLowerCase().includes(S.q.toLowerCase())).map(card).join('') || '<p class=mu style="text-align:center;grid-column:1/-1;padding:20px">ไม่พบสินค้าในหมวดหมู่นี้</p>';
+
+// --- VIEWS ---
 const V = {
   home: () => `
-    <div class=cd style="background:var(--or);color:#fff;border:0;text-align:center;padding:10px;font-weight:600">
-      ${SETTINGS.bannerMsg}
+    <div class=cd style="background:var(--or);color:#fff;border:0;text-align:center;padding:12px">
+      <b>${SETTINGS.bannerMsg}</b>
     </div>
+
+    <!-- STATS DASHBOARD -->
     <div class=g2>
-      <div class=cd style="text-align:center"><div class=mu>ผู้ใช้</div><b class=big>${S.users.length}</b></div>
-      <div class=cd style="text-align:center"><div class=mu>สินค้าเหลือ</div><b class=big>${P.reduce((a,p)=>a+p.k,0)}</b></div>
+      ${[
+        ['ผู้ใช้งาน', S.users.length, 'คน'],
+        ['ยอดเติม', S.top.filter(t=>t.s==='อนุมัติแล้ว').reduce((a,x)=>a+x.amt,0).toLocaleString(), 'บาท'],
+        ['สต็อกคงเหลือ', P.reduce((a,p)=>a+p.k,0), 'ชิ้น'],
+        ['ยอดขายแล้ว', P.reduce((a,p)=>a+p.s,0), 'ครั้ง']
+      ].map(x => `
+        <div class=cd style="padding:10px;text-align:center">
+          <div class=mu style="font-size:12px">${x[0]}</div>
+          <b class=big>${x[1]}</b> <span class=mu style="font-size:12px">${x[2]}</span>
+        </div>
+      `).join('')}
     </div>
-    <h2>🔥 สินค้าขายดี</h2>
-    <div class=g2>${P.map(card).join('')}</div>
-  `,
 
-  topup: () => `
-    <h2>💳 เติมเงินเข้ากระเป๋า</h2>
+    <!-- HOW TO ORDER -->
+    <div class="cd row" style="text-align:center;font-size:12px;padding:10px">
+      <div style="flex:1"><b>1. เลือกแอพ</b><br><span class=mu>เลือกสินค้าที่ต้องการ</span></div>
+      <div style="flex:1"><b>2. เติมเงิน</b><br><span class=mu>โอนเงินแนบสลิป</span></div>
+      <div style="flex:1"><b>3. รับสินค้า</b><br><span class=mu>รับรหัสทันที 24ชม.</span></div>
+    </div>
+
+    <!-- RECENT ORDERS -->
+    <h2>รายการสั่งซื้อล่าสุด</h2>
+    <div class=sc>
+      ${S.ord.slice(0, 5).map(o => `
+        <div class="cd row" style="min-width:210px;padding:8px">
+          <div class="ic s" style="background:var(--or)">🛒</div>
+          <div style="overflow:hidden">
+            <b class=or style="font-size:13px;display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden">${o.n}</b>
+            <div style="font-size:12px">${o.q} ชิ้น · <span class=mu>${o.t.split(' ')[1] || ''}</span></div>
+          </div>
+        </div>
+      `).join('') || '<div class=mu style="padding:10px">ยังไม่มีรายการสั่งซื้อ</div>'}
+    </div>
+
+    <!-- BEST SELLERS -->
+    <div class="row sp">
+      <h2>🔥 ขายดีประจำสัปดาห์</h2>
+      <button class=chip onclick="go('shop')">ดูทั้งหมด</button>
+    </div>
+    <div class=sc>${P.filter(p => p.h).map(card).join('')}</div>
+
+    <!-- MAIN CATEGORIES -->
+    <h2>หมวดหมู่สินค้า</h2>
+    ${C.map(catCard).join('')}
+
+    <!-- STORE INFO -->
     <div class=cd>
-      <label class=mu>ระบุจำนวนเงิน (บาท):</label>
-      <input id=amtInput type=number placeholder="เช่น 100" value="${S.tp.amt || ''}">
-      <div class=row style="margin:8px 0">
-        ${[50, 100, 150, 300, 500].map(a => `<button class=chip onclick="$('#amtInput').value=${a}">${a}฿</button>`).join('')}
+      <b>ℹ️ ข้อมูลร้านค้า</b>
+      <div class=mu style="margin-top:4px">
+        • เวลาทำการ: 09:00 – 24:00 น.<br>
+        • ระบบส่งรหัสอัตโนมัติ รับสินค้าได้ทันทีหลังชำระเงิน<br>
+        • สินค้าประเภทไม่เคลม ไม่รับประกันทุกกรณี
       </div>
-      <div class=cd style="background:var(--bg);text-align:center">
-        <b>พร้อมเปย์: ${SETTINGS.promptpayNo}</b><br>
-        <span class=mu>ชื่อบัญชี: ${SETTINGS.promptpayName}</span>
-      </div>
-      <label class=mu>แนบสลิปโอนเงิน:</label>
-      <input type=file accept="image/*" id=slipInput>
-      <button class="btn p" onclick="
-        const amt = $('#amtInput').value;
-        const file = $('#slipInput').files[0];
-        if(!amt || amt <= 0) return T('กรุณาระบุจำนวนเงิน');
-        
-        const sendReq = (imgData) => {
-          S.top.unshift({ id: Date.now(), u: S.u.n, amt: Number(amt), ch: 'พร้อมเพย์', slip: imgData || '', s: 'รอตรวจสอบ', t: new Date().toLocaleString('th-TH') });
-          saveState(); T('ส่งคำขอเติมเงินแล้ว! รอแอดมินอนุมัติ'); go('profile');
-        };
-
-        if(file) {
-          const r = new FileReader(); r.onload = e => sendReq(e.target.result); r.readAsDataURL(file);
-        } else { sendReq(''); }
-      ">ส่งแจ้งเติมเงิน</button>
     </div>
   `,
+
+  shop: () => `
+    <div class=mu>หน้าหลัก / สินค้าทั้งหมด</div>
+    <div class=row style="margin:10px 0">
+      <input placeholder="ค้นหาสินค้า…" value="${S.q}" oninput="S.q=this.value;$('#gr').innerHTML=grid()">
+      <button class=chip onclick="go('home')">‹ หน้าแรก</button>
+    </div>
+    <div class=g2 id=gr>${grid()}</div>
+  `,
+
+  category: () => {
+    const c = cat(S.a);
+    const catProds = P.filter(p => p.c == S.a);
+    return `
+      <div class=mu>หน้าหลัก / หมวดหมู่ / ${c.n}</div>
+      <div class="cd row" style="background:${c.c};color:#fff;margin-top:8px">
+        <div style="font-size:36px;font-weight:700">${c.l}</div>
+        <div>
+          <h3 style="margin:0;color:#fff;font-size:20px">${c.n}</h3>
+          <div style="font-size:13px;opacity:0.9">${c.desc || 'เลือกแพ็กเกจที่ต้องการสั่งซื้อ'}</div>
+        </div>
+      </div>
+      <h2>ตัวเลือกสินค้า ${c.n}</h2>
+      <div class=g2>${catProds.map(card).join('') || '<p class=mu style="grid-column:1/-1">ยังไม่มีสินค้าในหมวดหมู่นี้</p>'}</div>
+    `;
+  },
+
+  prod: () => {
+    const p = pd(S.a);
+    if (!p) return '<div class=cd>ไม่พบสินค้า</div>';
+    const c = cat(p.c);
+    return `
+      <div class=mu>หน้าหลัก / ${c.n} / ${p.n}</div>
+      <div class=cd>
+        ${ic(p.c)}
+        <h3 style="font-size:18px;margin-top:12px">${p.n}</h3>
+        <div class=cd style="background:var(--bg);font-size:13px">
+          ℹ️ <b>รายละเอียดสินค้า</b><br>
+          ${p.desc || 'ไม่มีรายละเอียดเพิ่มเติม'}<br><br>
+          ⚠️ <b>คำเตือน</b>: กรุณาอ่านเงื่อนไขประกันก่อนสั่งซื้อทุกครั้ง
+        </div>
+        <div class="row sp">
+          <span>ราคาต่อชิ้น</span>
+          <b class=or style="font-size:22px">${pr(p)}.00 ฿</b>
+        </div>
+        ${S.u && S.u.ag ? '<div class="mu or" style="text-align:right"> (ราคาสมาชิกตัวแทน)</div>' : ''}
+        
+        <div class=row style="justify-content:center;margin:14px 0">
+          <button class=chip onclick="S.n=Math.max(1,S.n-1);R()">−</button>
+          <b style="min-width:40px;text-align:center;font-size:18px">${S.n}</b>
+          <button class=chip onclick="S.n=Math.min(${p.k},S.n+1);R()">+</button>
+        </div>
+        <div class=mu style="text-align:center;margin-bottom:8px">เหลือสินค้าในสต็อกอีก ${p.k} ชิ้น</div>
+        <div class=row>
+          <button class=btn ${p.k ? '' : 'disabled'} onclick="add(${p.id})">ใส่รถเข็น 🛒</button>
+          <button class="btn p" ${p.k ? '' : 'disabled'} onclick="ask([{id:${p.id},q:S.n}])">สั่งซื้อเลย</button>
+        </div>
+      </div>
+      <h2>สินค้าที่คุณอาจสนใจ</h2>
+      <div class=sc>${P.filter(x => x.id != p.id).slice(0, 4).map(card).join('')}</div>
+    `;
+  },
+
+  review: () => `
+    <h2>รีวิวจากลูกค้า</h2>
+    <div class=cd style="text-align:center">
+      <b class=big style="font-size:36px">${(S.rv.reduce((a, r) => a + r.s, 0) / (S.rv.length || 1)).toFixed(1)}</b>
+      <div class=or style="font-size:18px">★★★★★</div>
+      <div class=mu>จากทั้งหมด ${S.rv.length} รีวิว</div>
+    </div>
+    ${S.rv.map(r => `
+      <div class=cd>
+        <div class="row sp">
+          <b>${r.n}</b>
+          <span class=or>${'★'.repeat(r.s)}</span>
+        </div>
+        <div style="margin-top:6px;font-size:14px">${r.t}</div>
+      </div>
+    `).join('')}
+    
+    <div class=cd>
+      <b>เขียนรีวิวร้านค้า</b>
+      <div class=row style="margin:10px 0">
+        ${[1, 2, 3, 4, 5].map(n => `<button class="chip ${S.rs >= n ? 'sel' : ''}" onclick="S.rs=${n};R()">${n}★</button>`).join('')}
+      </div>
+      <textarea rows=3 placeholder="เขียนประสบการณ์ความประทับใจ..." oninput="S.rt=this.value">${S.rt}</textarea>
+      <button class="btn p" onclick="
+        if(!S.rt.trim()) return T('กรุณาพิมพ์ข้อความรีวิว');
+        S.rv.unshift({n: S.u ? S.u.n.slice(0,2) + '***' : 'ผู้เยี่ยมชม', s: S.rs, t: S.rt});
+        S.rt = '';
+        saveState();
+        T('ขอบคุณสำหรับรีวิวครับ');
+        R();
+      ">ส่งรีวิว</button>
+    </div>
+  `,
+
+  contact: () => `
+    <h2>ช่องทางติดต่อเรา</h2>
+    <div class=cd style="text-align:center;padding:20px">
+      ${ic('yt', 0)}
+      <h3 style="margin-top:10px">${SETTINGS.storeName}</h3>
+      <p class=mu>${SETTINGS.slogan}</p>
+      <div class=cd style="background:var(--bg)">
+        <b>LINE Official Account</b>
+        <div class=or style="font-size:18px;font-weight:700;margin:4px 0">${SETTINGS.lineId}</div>
+        <div class=mu>เวลาตอบแชท: 09:00 - 24:00 น.</div>
+      </div>
+      <a class="btn p" target="_blank" rel="noopener" href="${SETTINGS.lineUrl}">แอดไลน์ติดต่อแอดมิน</a>
+    </div>
+  `,
+
+  topup: () => {
+    const t = S.tp, st = S.st;
+    const bar = `<div class=stps>${['ช่องทาง', 'จำนวนเงิน', 'โอนเงิน', 'ยืนยัน', 'สำเร็จ'].map((s, i) => `<div class=stp><i class="${st > i + 1 ? 'dn' : st == i + 1 ? 'on' : ''}">${st > i + 1 ? '✓' : i + 1}</i>${s}</div>`).join('')}</div>`;
+    let b = '';
+
+    if (st == 1) {
+      b = `
+        <h3 class=or>เลือกช่องทางชำระเงิน</h3>
+        ${['พร้อมเพย์ QR Code', 'โอนผ่านบัญชีธนาคาร'].map(c => `
+          <div class="cd ${t.ch == c ? 'sel' : ''}" onclick="S.tp.ch='${c}';R()" style="cursor:pointer">
+            <b>${c}</b>
+            <div class=mu>ระบบตรวจสอบอัตโนมัติ / แอดมินเช็คสลิป</div>
+          </div>
+        `).join('')}
+        <div class=row><button class="btn p" ${t.ch ? '' : 'disabled'} onclick="S.st=2;R()">ดำเนินการต่อ</button></div>
+      `;
+    }
+
+    if (st == 2) {
+      b = `
+        <h3 class=or>จำนวนเงินที่ต้องการเติม</h3>
+        <input id=am type=number inputmode=numeric placeholder="กรอกจำนวนเงิน เช่น 100" value="${t.amt || ''}" oninput="S.tp.amt=+this.value;$('#nx').disabled=!(S.tp.amt>=1)">
+        <div class=row style="flex-wrap:wrap;margin:10px 0">
+          ${[50, 100, 150, 300, 500, 1000].map(a => `<button class=chip onclick="S.tp.amt=${a};R()">${a}฿</button>`).join('')}
+        </div>
+        <div class=row>
+          <button class=btn onclick="S.st--;R()">ย้อนกลับ</button>
+          <button id=nx class="btn p" ${t.amt >= 1 ? '' : 'disabled'} onclick="S.st=3;R()">ดำเนินการต่อ</button>
+        </div>
+      `;
+    }
+
+    if (st == 3) {
+      b = `
+        <h3 class=or>โอนเงิน ${t.amt}฿ และแนบสลิป</h3>
+        <div class=cd style="background:var(--bg);text-align:center">
+          <b>พร้อมเพย์ / PromptPay</b><br>
+          <div class=or style="font-size:20px;font-weight:700">${SETTINGS.promptpayNo}</div>
+          <div>ชื่อบัญชี: ${SETTINGS.promptpayName}</div>
+        </div>
+        <div style="margin:10px 0">
+          <label class=mu>แนบรูปภาพสลิปการโอนเงิน:</label>
+          <input type=file accept="image/*" onchange="
+            const file = this.files[0];
+            if(file){
+              const reader = new FileReader();
+              reader.onload = function(e){ S.tp.slip = e.target.result; R(); };
+              reader.readAsDataURL(file);
+            }
+          ">
+        </div>
+        ${t.slip ? `<div class=or style="font-size:13px;margin:4px 0">✓ แนบสลิปเรียบร้อยแล้ว</div>` : ''}
+        <div class=row>
+          <button class=btn onclick="S.st--;R()">ย้อนกลับ</button>
+          <button class="btn p" ${t.slip ? '' : 'disabled'} onclick="S.st=4;R()">ยืนยันส่งสลิป</button>
+        </div>
+      `;
+    }
+
+    if (st == 4) {
+      b = `
+        <h3 class=or>ตรวจสอบข้อมูลก่อนยืนยัน</h3>
+        <div class="row sp"><span class=mu>ช่องทาง</span><b>${t.ch}</b></div>
+        <div class="row sp"><span class=mu>ยอดที่โอน</span><b class=or style="font-size:18px">${t.amt}฿</b></div>
+        <div class="row sp"><span class=mu>สถานะ</span><span>รอแอดมินอนุมัติ</span></div>
+        <div class=row style="margin-top:14px">
+          <button class=btn onclick="S.st--;R()">ย้อนกลับ</button>
+          <button class="btn p" onclick="
+            S.top.unshift({
+              id: Date.now(),
+              u: S.u.n,
+              amt: S.tp.amt,
+              ch: S.tp.ch,
+              slip: S.tp.slip,
+              s: 'รอตรวจสอบ',
+              t: new Date().toLocaleString('th-TH')
+            });
+            saveState();
+            S.st = 5;
+            R();
+          ">ส่งคำขอเติมเงิน</button>
+        </div>
+      `;
+    }
+
+    if (st == 5) {
+      b = `
+        <h3 class=or>✅ ส่งคำขอเติมเงินสำเร็จ</h3>
+        <p class=mu>แอดมินกำลังตรวจสอบสลิป เมื่ออนุมัติแล้วยอดเงินจะเข้าบัญชีทันที</p>
+        <button class="btn p" onclick="go('profile')">ไปที่หน้าโปรไฟล์</button>
+      `;
+    }
+
+    return `<h2>เติมเงินเข้ากระเป๋า</h2>${bar}<div class=cd>${b}</div>`;
+  },
 
   profile: () => `
     <div class=cd style="text-align:center">
       <div class="av l">${S.u.n[0].toUpperCase()}</div>
-      <h3 class=or>${S.u.n} (${S.u.role.toUpperCase()})</h3>
-      <div class=mu>ยอดเงินคงเหลือ: <b class=big>${S.u.bal}฿</b></div>
+      <h3 class=or style="margin-bottom:2px">${S.u.n}</h3>
+      <div class=mu>@${S.u.n} · ${S.u.ag ? '⭐ ตัวแทนจำหน่าย' : 'สมาชิกทั่วไป'} ${S.u.role === 'admin' ? '<b class=or>(ADMIN)</b>' : ''}</div>
     </div>
-    <button class="btn p" onclick="go('topup')">💳 เติมเงิน</button>
+    
+    <div class=g2>
+      <div class=cd style="text-align:center">
+        <div class=mu>ยอดคงเหลือ</div>
+        <b class=big>${S.u.bal}฿</b>
+      </div>
+      <div class=cd style="text-align:center">
+        <div class=mu>เติมสะสม</div>
+        <b class=big>${S.u.tot}฿</b>
+      </div>
+    </div>
+    
+    <button class="btn p" onclick="go('topup')">💳 เติมเงินเข้ากระเป๋า</button>
+
     <div class=cd>
+      <div class=mi onclick="go('cart')">🛒 ตะกร้าสินค้าของคุณ (${S.cart.length})</div>
       <div class=mi onclick="go('hist')">🕘 ประวัติการสั่งซื้อ & เติมเงิน</div>
-      ${S.u.role === 'admin' ? `<div class=mi style="color:var(--or);font-weight:700" onclick="go('admin')">⚙️ ระบบหลังบ้าน (ADMIN PANEL)</div>` : ''}
+      <div class=mi onclick="go('contact')">🎧 ติดต่อแอดมินร้าน</div>
+      ${S.u.role === 'admin' ? `<div class=mi style="color:var(--or)" onclick="go('admin')">⚙️ เข้าสู่ระบบหลังบ้าน (ADMIN PANEL)</div>` : ''}
+      <div class=mi style="color:#ef4444;border:0" onclick="S.u=null;S.cart=[];saveState();go('home')">🚪 ออกจากระบบ</div>
     </div>
+  `,
+
+  cart: () => `
+    <h2>ตะกร้าสินค้า</h2>
+    ${S.cart.length ? S.cart.map(x => {
+      const p = pd(x.id);
+      if (!p) return '';
+      return `
+        <div class="cd row">
+          ${ic(p.c, 1)}
+          <div style="flex:1">
+            <div style="font-weight:600">${p.n}</div>
+            <div class=mu>${pr(p)}฿ × ${x.q} = <b class=or>${pr(p) * x.q}฿</b></div>
+          </div>
+          <button class="chip danger" onclick="S.cart=S.cart.filter(c=>c.id!=${x.id});saveState();R()">ลบ</button>
+        </div>`;
+    }).join('') + `
+      <div class=cd>
+        <div class="row sp" style="font-size:18px">
+          <b>ยอดชำระทั้งหมด</b>
+          <b class=big>${tt(S.cart)}฿</b>
+        </div>
+        <button class="btn p" onclick="ask(S.cart)" style="margin-top:10px">สั่งซื้อสินค้าในตะกร้า</button>
+      </div>
+    ` : `
+      <div class=cd style="text-align:center;padding:30px">
+        <p class=mu>ยังไม่มีสินค้าในตะกร้า</p>
+        <button class="btn p" onclick="go('shop')">ไปเลือกสินค้า</button>
+      </div>
+    `}
   `,
 
   hist: () => `
-    <h2>ประวัติการสั่งซื้อ</h2>
+    <h2>ประวัติการสั่งซื้อสินค้า</h2>
     ${S.ord.map(o => `
       <div class=cd>
-        <b>${o.n} (${o.q} ชิ้น) - ${o.p}฿</b>
-        <div class=mu>${o.t}</div>
-        ${(o.keys||[]).map(k => `<div class=key-box>${k}</div>`).join('')}
+        <div class="row sp">
+          <b class=or style="font-size:16px">${o.n}</b>
+          <span class=mu style="font-size:12px">${o.t}</span>
+        </div>
+        <div class=mu>จำนวน: ${o.q} ชิ้น | ราคารวม: ${o.p}฿</div>
+        <div style="margin-top:8px">
+          <b style="font-size:13px">ข้อมูลรหัส / คีย์สินค้า:</b>
+          ${(o.keys || []).map(k => `
+            <div class="key-box row sp">
+              <span>${k}</span>
+              <button class="chip" style="padding:2px 8px;font-size:11px" onclick="copyTxt('${k}')">ก๊อปปี้</button>
+            </div>
+          `).join('')}
+        </div>
       </div>
-    `).join('') || '<div class=mu>ไม่มีประวัติสั่งซื้อ</div>'}
+    `).join('') || '<p class=mu style="text-align:center;padding:10px">ยังไม่มีประวัติการสั่งซื้อ</p>'}
 
     <h2>ประวัติการเติมเงิน</h2>
-    ${S.top.map(t => `
-      <div class="cd row sp">
-        <div><b>${t.amt}฿</b> (${t.t})</div>
-        <b style="color:${t.s==='อนุมัติแล้ว'?'#22c55e':t.s==='ปฏิเสธ'?'#ef4444':'var(--or)'}">${t.s}</b>
+    ${S.top.map(o => `
+      <div class=cd class="row sp">
+        <div>
+          <b class=or>${o.amt}฿</b> · ${o.ch}
+          <div class=mu>${o.t}</div>
+        </div>
+        <div style="font-weight:600;color:${o.s === 'อนุมัติแล้ว' ? '#22c55e' : o.s === 'ปฏิเสธ' ? '#ef4444' : 'var(--or)'}">${o.s}</div>
       </div>
-    `).join('') || '<div class=mu>ไม่มีประวัติเติมเงิน</div>'}
+    `).join('') || '<p class=mu style="text-align:center;padding:10px">ยังไม่มีประวัติการเติมเงิน</p>'}
   `,
 
-  admin: () => `
-    <h2>⚙️ ระบบหลังบ้าน (ADMIN PANEL)</h2>
-    <div class=cd>
-      <h3>💳 รายการสลิปรออนุมัติ</h3>
-      ${S.top.map(t => `
-        <div class=cd style="border:1px solid var(--or)">
-          <div class="row sp"><b>คุณ: ${t.u}</b> <b class=or style="font-size:18px">${t.amt}฿</b></div>
-          <div class=mu>เวลา: ${t.t} | สถานะ: <b>${t.s}</b></div>
-          ${t.slip ? `<img src="${t.slip}" style="max-width:100%;max-height:180px;margin:8px 0;border-radius:10px">` : ''}
-          ${t.s === 'รอตรวจสอบ' ? `
-            <div class=row style="margin-top:8px">
-              <button class="btn p" style="background:#22c55e;border-color:#22c55e" onclick="approveTopup(${t.id})">✓ อนุมัติเติมเงิน</button>
-              <button class="btn danger" onclick="rejectTopup(${t.id})">✕ ปฏิเสธ</button>
-            </div>
-          ` : ''}
+  // --- ADMIN PANEL ---
+  admin: () => {
+    if (!S.u || S.u.role !== 'admin') return '<div class=cd>สำหรับแอดมินเท่านั้น</div>';
+
+    const tabs = [
+      ['products', '📦 สินค้า'],
+      ['stock', '🔑 สต็อก'],
+      ['topups', '💳 สลิปเติมเงิน'],
+      ['users', '👥 ผู้ใช้งาน'],
+      ['settings', '⚙️ ตั้งค่าร้าน']
+    ];
+
+    let content = '';
+
+    // ADMIN: PRODUCTS & CATEGORIES
+    if (S.adminTab === 'products') {
+      content = `
+        <div class="row sp">
+          <h3>หมวดหมู่สินค้า</h3>
+          <button class="chip sel" onclick="
+            const name = prompt('ชื่อหมวดหมู่ใหม่:');
+            const code = prompt('รหัสย่อ (เช่น nf, yt, sp):');
+            if(name && code){
+              C.push({id: code, n: name, c: '#ff7a00', l: name[0], desc: ''});
+              saveState(); R();
+            }
+          ">+ เพิ่มหมวดหมู่</button>
         </div>
-      `).join('') || '<p class=mu>ไม่มีสลิปค้างอนุมัติ</p>'}
+        ${C.map(c => `
+          <div class="cd row sp">
+            <div>
+              <b>${c.n}</b> (${c.id})
+            </div>
+            <button class="chip danger" onclick="
+              if(confirm('ยืนยันลบหมวดหมู่นี้?')){
+                C = C.filter(x=>x.id!='${c.id}');
+                saveState(); R();
+              }
+            ">ลบ</button>
+          </div>
+        `).join('')}
+
+        <hr style="border:0;border-top:1px solid var(--bd);margin:16px 0">
+
+        <div class="row sp">
+          <h3>รายการสินค้าทั้งหมด</h3>
+          <button class="chip sel" onclick="
+            const name = prompt('ชื่อสินค้า:');
+            const catId = prompt('รหัสหมวดหมู่ (${C.map(x=>x.id).join(',')}):');
+            const price = +prompt('ราคาปลีก (บาท):');
+            const agentPrice = +prompt('ราคาสมาชิกตัวแทน (บาท):');
+            if(name && catId && price){
+              const newId = Date.now();
+              P.push({id: newId, n: name, c: catId, p: price, ap: agentPrice||price, k: 0, s: 0, h: 0, desc: ''});
+              K[newId] = [];
+              saveState(); R();
+            }
+          ">+ เพิ่มสินค้าใหม่</button>
+        </div>
+
+        ${P.map(p => `
+          <div class=cd>
+            <div class="row sp">
+              <b class=or>${p.n}</b>
+              <div>
+                <button class="chip ${p.h ? 'sel' : ''}" onclick="p.h=p.h?0:1;saveState();R()">HOT</button>
+                <button class="chip danger" onclick="
+                  if(confirm('ลบสินค้านี้?')){
+                    P = P.filter(x=>x.id!=${p.id});
+                    saveState(); R();
+                  }
+                ">ลบ</button>
+              </div>
+            </div>
+            <div class=mu>หมวดหมู่: ${cat(p.c).n} | ราคาปลีก: ${p.p}฿ | ราคาสมาชิกตัวแทน: ${p.ap}฿</div>
+            <div class=mu>สต็อก: ${p.k} ชิ้น | ขายแล้ว: ${p.s} ชิ้น</div>
+            <button class="btn" style="padding:4px 8px;font-size:12px;margin-top:6px" onclick="
+              const np = prompt('ราคาปลีกใหม่:', ${p.p});
+              const nap = prompt('ราคาสมาชิกตัวแทนใหม่:', ${p.ap});
+              const ndesc = prompt('รายละเอียดสินค้า:', '${p.desc||''}');
+              if(np) p.p = +np;
+              if(nap) p.ap = +nap;
+              if(ndesc!==null) p.desc = ndesc;
+              saveState(); R();
+            ">✏️ แก้ไขราคา/รายละเอียด</button>
+          </div>
+        `).join('')}
+      `;
+    }
+
+    // ADMIN: STOCK KEY MANAGER
+    if (S.adminTab === 'stock') {
+      content = `
+        <h3>จัดการคีย์ / สต็อกสินค้า</h3>
+        ${P.map(p => `
+          <div class=cd>
+            <b>${p.n}</b> (สต็อกคงเหลือ: <b class=or>${p.k}</b> ชิ้น)
+            <div class=mu>ใส่คีย์/รหัสสินค้า 1 รายการต่อ 1 บรรทัด:</div>
+            <textarea id="stock_${p.id}" rows=3 placeholder="user:pass หรือ Link">${(K[p.id] || []).join('\n')}</textarea>
+            <button class="btn p" style="padding:6px" onclick="
+              const val = $('#stock_${p.id}').value.trim();
+              const arr = val ? val.split('\\n').map(x=>x.trim()).filter(Boolean) : [];
+              K[${p.id}] = arr;
+              p.k = arr.length;
+              saveState();
+              T('บันทึกสต็อก ${p.n} แล้ว');
+              R();
+            ">บันทึกสต็อก</button>
+          </div>
+        `).join('')}
+      `;
+    }
+
+    // ADMIN: TOPUP APPROVAL
+    if (S.adminTab === 'topups') {
+      content = `
+        <h3>อนุมัติสลิปเติมเงิน</h3>
+        ${S.top.map(t => `
+          <div class=cd>
+            <div class="row sp">
+              <b>คุณ ${t.u}</b>
+              <b class=or style="font-size:18px">${t.amt}฿</b>
+            </div>
+            <div class=mu>${t.ch} · ${t.t}</div>
+            ${t.slip ? `
+              <div style="margin:8px 0">
+                <img src="${t.slip}" style="max-width:100%;max-height:200px;border-radius:12px;border:1px solid var(--bd)" onclick="window.open(this.src)">
+              </div>
+            ` : '<div class=mu>ไม่มีรูปสลิป</div>'}
+            <div class=mu style="margin-bottom:6px">สถานะปัจจุบัน: <b>${t.s}</b></div>
+            ${t.s === 'รอตรวจสอบ' ? `
+              <div class=row>
+                <button class="btn p" style="background:#22c55e;border-color:#22c55e" onclick="
+                  t.s = 'อนุมัติแล้ว';
+                  const user = S.users.find(x=>x.n==='${t.u}');
+                  if(user){ user.bal += ${t.amt}; user.tot += ${t.amt}; }
+                  if(S.u.n === '${t.u}') { S.u.bal += ${t.amt}; S.u.tot += ${t.amt}; }
+                  saveState();
+                  T('อนุมัติยอด ${t.amt}฿ เรียบร้อย');
+                  R();
+                ">✓ อนุมัติ</button>
+                <button class="btn danger" onclick="
+                  t.s = 'ปฏิเสธ';
+                  saveState();
+                  T('ปฏิเสธรายการนี้แล้ว');
+                  R();
+                ">✕ ปฏิเสธ</button>
+              </div>
+            ` : ''}
+          </div>
+        `).join('') || '<p class=mu>ไม่มีรายการเติมเงิน</p>'}
+      `;
+    }
+
+    // ADMIN: USER MANAGEMENT
+    if (S.adminTab === 'users') {
+      content = `
+        <h3>จัดการผู้ใช้งานระบบ</h3>
+        ${S.users.map(u => `
+          <div class=cd>
+            <div class="row sp">
+              <b>${u.n}</b>
+              <span class=chip style="padding:2px 8px;font-size:11px">${u.role}</span>
+            </div>
+            <div class=mu>ยอดเงินคงเหลือ: <b class=or>${u.bal}฿</b> | เติมสะสม: ${u.tot}฿</div>
+            <div class=mu>สถานะตัวแทน: <b>${u.ag ? 'เป็นตัวแทน (ได้ราคาพิเศษ)' : 'สมาชิกทั่วไป'}</b></div>
+            <div class=row style="margin-top:8px">
+              <button class="chip ${u.ag ? 'sel' : ''}" onclick="
+                u.ag = u.ag ? 0 : 1;
+                if(S.u.n==='${u.n}') S.u.ag = u.ag;
+                saveState(); R();
+              ">${u.ag ? 'ยกเลิกตัวแทน' : 'ตั้งเป็นตัวแทน'}</button>
+
+              <button class="chip" onclick="
+                const amtStr = prompt('ระบุจำนวนเงินที่ต้องการปรับ (ใส่ + เพื่อเพิ่ม, ใส่ - เพื่อลด):', '0');
+                if(amtStr !== null) {
+                  const val = parseFloat(amtStr);
+                  if(!isNaN(val)) {
+                    u.bal += val;
+                    if(S.u.n === '${u.n}') S.u.bal = u.bal;
+                    saveState();
+                    T('ปรับยอดเงินของ ${u.n} เป็น ' + u.bal + '฿ แล้ว');
+                    R();
+                  }
+                }
+              ">💵 ปรับยอดเงิน</button>
+            </div>
+          </div>
+        `).join('')}
+      `;
+    }
+
+    // ADMIN: STORE SETTINGS
+    if (S.adminTab === 'settings') {
+      content = `
+        <h3>ตั้งค่าร้านค้า</h3>
+        <div class=cd>
+          <label class=mu>ชื่อร้านค้า:</label>
+          <input id="st_name" value="${SETTINGS.storeName}">
+
+          <label class=mu>ข้อความประกาศหน้าหลัก (Banner):</label>
+          <input id="st_banner" value="${SETTINGS.bannerMsg}">
+
+          <label class=mu>เบอร์พร้อมเปย์ (PromptPay):</label>
+          <input id="st_pp" value="${SETTINGS.promptpayNo}">
+
+          <label class=mu>ชื่อบัญชีพร้อมเปย์:</label>
+          <input id="st_ppname" value="${SETTINGS.promptpayName}">
+
+          <label class=mu>LINE ID ร้านค้า:</label>
+          <input id="st_line" value="${SETTINGS.lineId}">
+
+          <button class="btn p" style="margin-top:10px" onclick="
+            SETTINGS.storeName = $('#st_name').value;
+            SETTINGS.bannerMsg = $('#st_banner').value;
+            SETTINGS.promptpayNo = $('#st_pp').value;
+            SETTINGS.promptpayName = $('#st_ppname').value;
+            SETTINGS.lineId = $('#st_line').value;
+            saveState();
+            T('บันทึกการตั้งค่าร้านค้าแล้ว');
+            R();
+          ">บันทึกการตั้งค่า</button>
+        </div>
+      `;
+    }
+
+    return `
+      <h2>ระบบหลังบ้าน (ADMIN PANEL)</h2>
+      <div class=sc style="margin-bottom:12px">
+        ${tabs.map(t => `<button class="chip ${S.adminTab === t[0] ? 'sel' : ''}" onclick="S.adminTab='${t[0]}';R()">${t[1]}</button>`).join('')}
+      </div>
+      ${content}
+    `;
+  }
+};
+
+// --- MODAL RENDERER ---
+const M = {
+  auth: () => `
+    <div class=row style="border:1.5px solid var(--bd);border-radius:18px;padding:4px;margin-bottom:14px">
+      <button class="tab ${S.m.tab === 0 ? 'on' : ''}" onclick="S.m.tab=0;R()">เข้าสู่ระบบ</button>
+      <button class="tab ${S.m.tab === 1 ? 'on' : ''}" onclick="S.m.tab=1;R()">สมัครสมาชิก</button>
     </div>
+    <h3 class=or style="text-align:center">${S.m.tab === 1 ? 'สมัครสมาชิกใหม่' : 'เข้าสู่ระบบ'}</h3>
+    <input id=un placeholder="ชื่อผู้ใช้งาน (อย่างน้อย 3 ตัวอักษร)">
+    <input id=pw type=password placeholder="รหัสผ่าน (อย่างน้อย 6 ตัวอักษร)">
+    ${S.m.tab === 1 ? '<input id=pw2 type=password placeholder="ยืนยันรหัสผ่านอีกครั้ง">' : ''}
+    <button class="btn p" onclick="doAuth()" style="margin-top:10px">${S.m.tab === 1 ? 'สมัครสมาชิก' : 'เข้าสู่ระบบ'}</button>
+    <div class=mu style="font-size:12px;text-align:center;margin-top:8px">ทดสอบระบบ: admin / 123456 หรือ demo / 123456</div>
+  `,
+
+  cf: () => `
+    <h3 class=or>ยืนยันการสั่งซื้อ</h3>
+    ${S.m.it.map(x => {
+      const p = pd(x.id);
+      return `<div class="row sp"><span>${p.n} ×${x.q}</span><b>${pr(p) * x.q}฿</b></div>`;
+    }).join('')}
+    <hr style="border:0;border-top:1px solid var(--bd);margin:10px 0">
+    <div class="row sp" style="font-size:16px">
+      <b>ยอดรวมชำระ</b>
+      <b class=or style="font-size:20px">${tt(S.m.it)}฿</b>
+    </div>
+    <div class=mu style="margin:4px 0">ยอดเงินคงเหลือของคุณ: ${S.u.bal}฿</div>
+    <p style="color:#ef4444;font-size:12px;margin:8px 0">⚠️ สินค้าซื้อแล้วไม่รับเปลี่ยนคืนทุกกรณี กรุณาตรวจสอบให้เรียบร้อย</p>
+    <div class=row>
+      <button class="btn danger" onclick="S.m=null;R()">ยกเลิก</button>
+      <button class="btn p" onclick="pay()">ยืนยันสั่งซื้อ</button>
+    </div>
+  `,
+
+  ok: () => `
+    <h3 class=or style="text-align:center">✅ สั่งซื้อสำเร็จ!</h3>
+    <p class=mu style="text-align:center">ตัดยอดเงิน ${S.m.tot}฿ เรียบร้อยแล้ว ข้อมูลรหัสสินค้าของคุณ:</p>
+    <div class=cd style="background:var(--bg)">
+      ${S.m.items.map(item => `
+        <div style="margin-bottom:8px">
+          <b>${item.name}</b>
+          ${item.keys.map(k => `
+            <div class="key-box row sp">
+              <span>${k}</span>
+              <button class="chip" style="padding:2px 8px;font-size:11px" onclick="copyTxt('${k}')">ก๊อปปี้</button>
+            </div>
+          `).join('')}
+        </div>
+      `).join('')}
+    </div>
+    <button class="btn p" onclick="S.m=null;R()">ปิดหน้าต่าง</button>
+    <button class=btn onclick="S.m=null;go('hist')">ดูประวัติสั่งซื้อ</button>
   `
 };
+
+// --- DRAWER & HEADER ---
+const DR = () => `
+  <div class=ov style="justify-content:flex-start;padding:0" onclick="S.menu=0;R()">
+    <div class=md style="height:100%;max-height:none;border-radius:0 24px 24px 0;max-width:280px" onclick="event.stopPropagation()">
+      <div class="row sp" style="margin-bottom:14px">
+        <b class=or style="font-size:20px">${SETTINGS.storeName}</b>
+        <button class=ib onclick="S.menu=0;R()">✕</button>
+      </div>
+      <div class=mu style="margin-bottom:10px">${SETTINGS.slogan}</div>
+      
+      ${[
+        ['home', '🏠', 'หน้าหลัก'],
+        ['shop', '🛍️', 'สินค้าทั้งหมด'],
+        ['review', '⭐', 'รีวิวจากลูกค้า'],
+        ['contact', '🎧', 'ช่องทางติดต่อ']
+      ].map(x => `<div class=mi onclick="go('${x[0]}')">${x[1]} ${x[2]}</div>`).join('')}
+
+      <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--bd)">
+        <div class=mu style="font-weight:600;margin-bottom:6px">🎨 เลือกธีมสี</div>
+        <div class=row>
+          <button class="chip ${THEME === 'light' ? 'sel' : ''}" style="flex:1" onclick="setTheme('light')">สว่าง</button>
+          <button class="chip ${THEME === 'dark' ? 'sel' : ''}" style="flex:1" onclick="setTheme('dark')">มืด</button>
+          <button class="chip ${THEME === 'warm' ? 'sel' : ''}" style="flex:1" onclick="setTheme('warm')">พาสเทล</button>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--bd)">
+        <div class=mu style="font-weight:600;margin-bottom:6px">⚙️ สลับโหมดทดลอง</div>
+        <button class="btn" style="padding:6px 10px;font-size:12px" onclick="
+          if(!S.u) {
+            S.u = S.users.find(x=>x.role==='admin');
+          } else {
+            S.u = S.u.role==='admin' ? S.users.find(x=>x.role==='user') : S.users.find(x=>x.role==='admin');
+          }
+          saveState();
+          T('สลับเป็นผู้ใช้: ' + S.u.n + ' (' + S.u.role + ')');
+          R();
+        ">สลับเป็น ${S.u && S.u.role === 'admin' ? 'ลูกค้าทั่วไป (Demo)' : 'เจ้าของร้าน (Admin)'}</button>
+      </div>
+
+      ${S.u ? `
+        <div style="margin-top:14px;padding-top:10px;border-top:1px solid var(--bd)">
+          <div class=mu>เข้าสู่ระบบในชื่อ: <b>${S.u.n}</b></div>
+          <div class=mi style="color:#ef4444;border:0;padding:6px 0" onclick="S.u=null;saveState();R()">ออกจากระบบ</div>
+        </div>
+      ` : `
+        <div class=mi style="border:0;color:var(--or);font-weight:600" onclick="login()">🔑 เข้าสู่ระบบ / สมัครสมาชิก</div>
+      `}
+    </div>
+  </div>
+`;
 
 const H = () => `
   <header>
     <button class=ib onclick="S.menu=1;R()">☰</button>
-    <b onclick="go('home')">${SETTINGS.storeName}</b>
-    <button class=av onclick="go('profile')">${S.u.n[0].toUpperCase()}</button>
+    <b onclick="go('home')">
+      ${SETTINGS.logoUrl ? `<img src="${SETTINGS.logoUrl}" class="logo-img">` : ''}
+      ${SETTINGS.storeName}
+    </b>
+    ${S.u ? `
+      <button class=ib onclick="go('cart')">
+        🛒${S.cart.length ? `<i class=bd>${S.cart.length}</i>` : ''}
+      </button>
+      <button class=av onclick="go('profile')">${S.u.n[0].toUpperCase()}</button>
+    ` : `
+      <button class="btn p" style="width:auto;margin:0;padding:6px 14px" onclick="login()">เข้าสู่ระบบ</button>
+    `}
   </header>
 `;
 
+// MAIN RENDER LOOP
 function R() {
-  const app = $('#app'); if(!app) return;
-  app.innerHTML = H() + (V[S.v] ? V[S.v]() : V.home()) + 
-    (S.menu ? `
-      <div class=ov onclick="S.menu=0;R()">
-        <div class=md onclick="event.stopPropagation()">
-          <h3>เมนูร้านค้า</h3>
-          <div class=mi onclick="go('home')">🏠 หน้าแรก</div>
-          <div class=mi onclick="go('topup')">💳 เติมเงิน</div>
-          <div class=mi onclick="go('profile')">👤 โปรไฟล์</div>
-          <div class=mi style="color:var(--or)" onclick="
-            S.u = S.u.role==='admin' ? S.users.find(x=>x.role==='user') : S.users.find(x=>x.role==='admin');
-            saveState(); T('สลับเป็น: ' + S.u.n); R();
-          ">🔄 สลับโหมด (ปัจจุบัน: ${S.u.role.toUpperCase()})</div>
-        </div>
-      </div>
-    ` : '') +
-    (S.m && S.m.t==='cf' ? `
-      <div class=ov onclick="S.m=null;R()">
-        <div class=md onclick="event.stopPropagation()">
-          <h3>ยืนยันการสั่งซื้อ</h3>
-          <div class="row sp"><b>ยอดชำระ:</b><b class=or style="font-size:20px">${tt(S.m.it)}฿</b></div>
-          <div class=mu>ยอดคงเหลือของคุณ: ${S.u.bal}฿</div>
-          <div class=row style="margin-top:12px">
-            <button class="btn danger" onclick="S.m=null;R()">ยกเลิก</button>
-            <button class="btn p" onclick="pay()">ยืนยันชำระเงิน</button>
-          </div>
-        </div>
-      </div>
-    ` : '') +
-    (S.m && S.m.t==='ok' ? `
-      <div class=ov onclick="S.m=null;R()">
-        <div class=md onclick="event.stopPropagation()">
-          <h3 style="color:#22c55e">✅ สั่งซื้อสำเร็จ!</h3>
-          ${S.m.items.map(i => `<b>${i.name}</b>${i.keys.map(k=>`<div class=key-box>${k}</div>`).join('')}`).join('')}
-          <button class="btn p" onclick="S.m=null;go('hist')">ปิดหน้าต่าง</button>
-        </div>
-      </div>
-    ` : '');
+  $('#app').innerHTML = 
+    H() + 
+    V[S.v]() + 
+    (S.cart.length && S.v !== 'cart' ? `<button class="btn p cb" onclick="go('cart')">🛒 ${S.cart.length} รายการ · ${tt(S.cart)}฿ — ดูตะกร้า</button>` : '') +
+    (S.menu ? DR() : '') + 
+    (S.m ? `<div class=ov onclick="S.m=null;R()"><div class=md onclick="event.stopPropagation()"><button class=ib style="float:right" onclick="S.m=null;R()">✕</button>${M[S.m.t]()}</div></div>` : '');
 }
 
+// INITIAL RENDER
 R();
 </script>
 </body>
