@@ -923,14 +923,21 @@ const V = {
             ${t.s === 'รอตรวจสอบ' ? `
               <div class=row>
                 <button class="btn p" style="background:#22c55e;border-color:#22c55e" onclick="
-                  t.s = 'อนุมัติแล้ว';
-                  const user = S.users.find(x=>x.n==='${t.u}');
-                  if(user){ user.bal += ${t.amt}; user.tot += ${t.amt}; }
-                  if(S.u.n === '${t.u}') { S.u.bal += ${t.amt}; S.u.tot += ${t.amt}; }
-                  saveState();
-                  T('อนุมัติยอด ${t.amt}฿ เรียบร้อย');
-                  R();
-                ">✓ อนุมัติ</button>
+                <button class="btn p" style="background:#22c55e;border-color:#22c55e" onclick="
+  t.s = 'อนุมัติแล้ว';
+  const targetUser = S.users.find(x => x.n === t.u);
+  if (targetUser) { 
+    targetUser.bal = (targetUser.bal || 0) + t.amt; 
+    targetUser.tot = (targetUser.tot || 0) + t.amt; 
+  }
+  if (S.u && S.u.n === t.u) { 
+    S.u.bal = (S.u.bal || 0) + t.amt; 
+    S.u.tot = (S.u.tot || 0) + t.amt; 
+  }
+  saveState();
+  T('อนุมัติยอด ' + t.amt + '฿ เรียบร้อย');
+  R();
+">✓ อนุมัติ</button>
                 <button class="btn danger" onclick="
                   t.s = 'ปฏิเสธ';
                   saveState();
